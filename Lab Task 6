@@ -1,0 +1,185 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+//MyLinkedList MyList1 = new MyLinkedList();
+		
+		//MyList1.add(12);
+		
+		/*Node list = new Node();
+		Node mynode = new Node();
+		
+		
+		mynode.num=6;
+		mynode.self=mynode;
+		mynode.next=null;
+		mynode.previous=list;
+		
+		
+		list.num=4;
+		list.self=list;
+		list.next=mynode;
+		list.previous=null;
+		
+		
+		
+		
+		while (list.next!=null)
+		{
+			System.out.println(list.num);
+			list=list.next;
+		}*/
+		
+	/*	Node A = new Node();
+		Node B = new Node();
+		Node C = new Node();
+		
+		A.num=3;
+		B.num=2;
+		C.num=6;
+		
+		A.self=A;
+		A.next=B;
+		A.previous=null;
+		
+		B.self=B;
+		B.next=C;
+		B.previous=A;
+		
+		C.self=C;
+		C.next=null;
+		C.previous=B; */
+			
+
+	MyLinkedList ABC =new MyLinkedList();
+		
+	ABC.add(3);	
+  /*ABC.update();*/
+	ABC.search();
+		
+	}
+
+}
+
+
+
+public class Node {
+
+
+	
+
+	public int  num;
+	public Node next; 
+	public Node self;
+	public Node previous;
+	
+
+	}
+	
+
+
+
+public abstract class MyList {
+
+
+
+	public abstract void add(int num);
+	public abstract void remove();
+	public abstract void update();
+	public abstract void search();
+
+
+
+}
+
+
+
+public class MyLinkedList extends MyList  {
+
+
+
+	private Node list;
+	private Node First = null;
+	private Node Last = null;
+	
+	public void add(int num){
+		
+		list = new Node();
+		list.num=num;
+		list.self=list;
+		list.next=null;
+		list.previous=null;
+		
+		if(First == Last && Last != null)
+		{
+			First.next = list;
+		}
+		
+		
+		if(First == null)
+		{
+			First = list;
+		}
+		
+		if(Last == null)
+		{
+			Last = list;
+		}
+		
+		System.out.println(list.num);
+		
+	}
+	public void remove(){
+	
+	list = list.previous;
+	
+	list.next= null;
+	
+	
+	}
+	public void update(){
+		
+		while(Last.next == null){
+			
+			if(list.self==list){
+				list.num=7;
+			}
+			
+			System.out.println(list.num);
+			
+		}
+		
+		list =list.next;
+		
+	}
+	public void search(){
+
+		
+		
+		while(list.next == null){
+			
+			if(list.num==4){
+			System.out.println("this node"+list);
+			}
+			else
+			{
+				System.out.println("does not exist");
+			}
+		
+			list =list.next;
+		}
+	}
+}
+
+
+
+
+
+public class Student {
+
+}
+
+
