@@ -1,0 +1,215 @@
+package subhan;
+
+
+public class main {
+	public static void main(String[] args)
+	{
+
+		mylinkedlist myList = new mylinkedlist();
+
+		myList.add(15);
+		myList.add(10);
+		myList.add(829);
+	    myList.add(454);
+		myList.add(0);
+		myList.add(54);
+		
+		myList.add(3);
+		myList.index(1);
+		
+		
+		//System.out.println(MyList.h);
+		//MyList.remove();
+		
+		System.out.println(myList.i);
+		
+		myList.display();	
+}}
+
+
+
+
+package subhan;
+
+
+
+public class node {
+
+    public int num;
+	public node previous;
+	public node next;
+	public node address;
+	
+	public node()
+	{
+		num=0;
+		next=null;
+	}
+	public node(int num,node next,node previous)
+	{
+		this.num=num;
+		this.next=next;
+		this.previous=previous;
+	}
+}
+
+package subhan;
+
+
+public abstract class mylist {
+	
+	
+	public abstract void add(int num);
+	public abstract void remove();
+	public abstract void sort();
+	public abstract void search(int num);
+	public abstract void display();
+	public abstract void update(int num,int pos,int val);
+
+}
+
+package subhan;
+
+
+public class mylinkedlist {
+
+	public node list;
+	public node First = null;
+	public node Last = null;
+	public int i=0;
+	public int j;
+    public int h;
+    public int num;
+    
+	
+	public void add(int num){
+	
+		node list=new node(num,null,null);
+		
+		i++;
+		if (First==null){
+ 			First=list;
+ 			Last=First;
+ 		}
+		else
+ 		{
+ 			Last.next=list;
+ 			list.previous=Last;
+ 			Last=list;
+ 			
+ 		}
+		sort();
+     }
+	/*public void addp(int num){
+		sort();
+		node list=new node(num,null,null);	
+		
+		node ptr=First;
+		for(j=1;j<i;j++){
+			
+			if(ptr.num>num)
+			{
+				node tmp=ptr.next;
+				ptr.next=list;
+				list.next=tmp;
+				
+			}
+			
+			ptr=ptr.next;
+		}
+		
+		i++;
+	}*/
+
+public int index(int num){
+	
+		
+		node ptr=First;
+		
+		for(j=1;j<=i;j++){
+			
+			if(ptr.num==num)
+			{
+			h=j;
+			}
+			ptr=ptr.next;}
+		return h;
+	}
+   
+	
+	public void remove (){
+		node ptr=First;
+		Last=Last.previous;
+		Last.next=null;
+		i--;
+	}
+	
+	public void search(int num){
+		index(num);
+		node ptr=First;
+		for(j=1;j<i;j++)
+		{
+			if(ptr.num==num){
+				System.out.println("The number is at pos "+h);
+			}
+		ptr=ptr.next;}
+	}
+	
+public void sort(){
+	
+	for(int k=1;k<i;k++){
+		node ptr=First;
+		
+	for(j=1;j<i;j++)
+	{
+		node a=ptr;
+		node b=ptr.next;
+		if(a.num>b.num){
+		int x=a.num;
+		a.num=b.num;
+		b.num=x;}
+	ptr=ptr.next;}
+	}
+	}
+	public void update(int num,int pos,int val){
+		node ptr=First;
+	    index(num);
+	    pos=h;
+		for(j=1;j<i;j++){
+			if(j==pos)
+			{
+				ptr.num=val;
+			}
+		ptr=ptr.next;}
+		
+	}
+	public void display(){
+        if (i == 0) 
+
+        {
+
+            System.out.println("empty");
+
+            return;
+        }
+       
+ node ptr=First;
+ System.out.print(First.num+ " ");
+
+ ptr = First.next;
+        
+    while (ptr.next != null)
+
+    {
+
+        System.out.print(ptr.num+ " ");
+
+        ptr= ptr.next;
+
+    }
+    System.out.println(ptr.num);
+	}
+}
+
+
+
