@@ -1,0 +1,79 @@
+package safwan2;
+
+public class main {
+
+	public static void main(String[] args) {
+	
+hamzalist A = new hamzalist();
+
+
+A.add(6);
+A.add(4);
+A.show();
+
+
+}
+}
+
+package safwan2;
+
+public class linkNode {
+
+	int value ;
+	linkNode add;
+	
+	
+	package safwan2;
+
+public class hamzalist {
+	
+    public linkNode list;
+	public void add (int val)
+	{
+	linkNode temp;
+	if(list==null)
+	{
+		list = new linkNode();
+		list.value = val;
+	}
+	else
+	{
+	temp = list;
+	list = new linkNode();
+	list.value=val;
+	temp.add = list;
+	list= temp;
+	
+	}}
+	
+	public void show()
+	{
+		linkNode temp;
+		temp=list;
+		while
+			(temp.add !=null)
+		{
+			System.out.println(temp.value);
+			temp=temp.add;
+		}
+		}
+	
+}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
