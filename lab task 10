@@ -1,0 +1,74 @@
+
+bubble sort
+publicclass Q1 {
+
+	publicvoidbubblesort()
+            {
+int[] arr = { 89, 25, 01, 99, 0, 45, 7, 3, 65, 100 };
+
+int temp = 0;
+
+for (int write = 0; write <arr.length; write++)
+            {
+for (int sort = 0; sort <arr.length - 1; sort++)
+                {
+if (arr[sort] >arr[sort + 1])
+                    {
+temp = arr[sort + 1];
+arr[sort + 1] = arr[sort];
+arr[sort] = temp;
+                    }
+                }
+            }
+
+for (int i = 0; i <arr.length; i++)
+System.out.println(arr[i] + " ");
+            }
+}
+
+insertion
+
+publicclassInsertionsort {
+	
+	voidinsertionSort(int[] arr) {
+	int i, j, newValue;
+	for (i = 1; i <arr.length; i++) {
+	newValue = arr[i];
+	            j = i;
+	while (j > 0 &&arr[j - 1] >newValue) {
+	arr[j] = arr[j - 1];
+	j--;
+	            }
+	arr[j] = newValue;
+	      }
+	}
+}
+
+Q3.
+publicclass Q3 {
+	
+		publicvoidinsort()
+	            {
+	int[] arr = { 55, 0, 07, 2, 3, 4, 9, 77, 34, 64, 14, 11 };
+
+	int temp = 0;
+
+	for (int write = 0; write <arr.length; write++)
+	            {
+	for (intsort = 0; sort<arr.length - 1; sort++)
+	                {
+	if (arr[sort] >arr[sort + 1])
+	                    {
+	temp = arr[sort + 1];
+	arr[sort + 1] = arr[sort];
+	arr[sort] = temp;
+	
+	                       }
+	                    }
+	               }
+
+	for (int i = 0; i <arr.length; i++)
+	System.out.println(arr[i] + " ");
+	     }
+	}
+
